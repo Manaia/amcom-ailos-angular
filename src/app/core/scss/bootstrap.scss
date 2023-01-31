@@ -1,0 +1,9 @@
+@import 'variables';
+
+// Alterando cores do bootstrap
+$theme-colors: (
+  "primary": $azul-principal,
+);
+
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+

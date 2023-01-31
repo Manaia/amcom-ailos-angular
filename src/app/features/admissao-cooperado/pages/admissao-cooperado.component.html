@@ -1,0 +1,29 @@
+<mat-stepper labelPosition="bottom" linear #stepper>
+  <mat-step [stepControl]="buscaCooperadoFormGroup" [editable]="false">
+    <ng-template matStepLabel>Início</ng-template>
+    <div class="row mb-5">
+      <app-admissao-cooperado-busca [buscaCooperadoFormGroup]="buscaCooperadoFormGroup" (selecionaCooperadoEmitter)="selecionaCooperado($event)"></app-admissao-cooperado-busca>
+    </div>
+    <div class="row mb-5" *ngIf="exibeDadosCooperado">
+      <app-admissao-cooperado-detalhes [dadosCooperado]="dadosCooperado"></app-admissao-cooperado-detalhes>
+    </div>
+  </mat-step>
+  <mat-step [editable]="false">
+    <ng-template matStepLabel>Documentos</ng-template>
+  </mat-step>
+  <mat-step [editable]="false">
+    <ng-template matStepLabel>Dados cadastrais</ng-template>
+  </mat-step>
+  <mat-step [editable]="false">
+    <ng-template matStepLabel>Admissão</ng-template>
+  </mat-step>
+</mat-stepper>
+
+<aside class="step-control-button w-100 position-fixed">
+  <div class="row p-3">
+    <div class="d-flex btn-step-group flex-row">
+      <button class="btn btn-primary" *ngIf="cooperadoSelecionado">Iniciar nova admissão</button>
+      <button class="btn btn-outline-primary">Dicas para admissão</button>
+    </div>
+  </div>
+</aside>

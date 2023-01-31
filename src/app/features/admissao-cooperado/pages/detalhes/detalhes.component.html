@@ -1,0 +1,11 @@
+<section class="d-flex">
+  <div class="col-3 me-3">
+    <app-admissao-cooperado-detalhes-cadastro [dadosCooperado]="dadosCooperado"/>
+  </div>
+  <div class="col-3 me-3">
+    <app-admissao-cooperado-detalhes-conta-aplicacao [dadosContaBancaria]="dadosCooperado.contaAplicacao"/>
+  </div>
+  <div class="col-3 me-3">
+    <app-admissao-cooperado-detalhes-conta-corrente [dadosContaBancaria]="dadosCooperado.contaCorrente"/>
+  </div>
+</section>

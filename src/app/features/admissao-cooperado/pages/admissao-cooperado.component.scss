@@ -1,0 +1,19 @@
+mat-stepper {
+  background-color: inherit;
+
+  ::ng-deep .mat-horizontal-stepper-header-container {
+    display: flex;
+    width: 50% !important;
+    align-self: center;
+  }
+}
+
+.step-control-button {
+  bottom: 0;
+  background-color: #FFFFFF;
+  .btn-step-group {
+    button:not(:last-of-type) {
+      margin-right: 0.5em;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<section>
+  <h2 class="mb-1">Informe o CPF do futuro cooperado (a)</h2>
+  <p class="mb-0">Se necessário, você poderá duplicar uma conta existente ou pausar e retornar este cadastro futuramente.</p>
+  <p>Digite apenas os números (sem pontos ou traços).</p>
+</section>
+
+<form class="row" [formGroup]="buscaCooperadoFormGroup"  (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="documento"><strong>CPF</strong></label>
+    <div class="d-flex">
+      <div class="col-3 me-3">
+        <input
+          type="text"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': buscaCooperadoFormGroup.invalid && buscaCooperadoFormGroup.get('documento')?.touched }"
+          id="documento"
+          placeholder="000.000.000-00"
+          mask="000.000.000-00"
+          formControlName="documento"
+        >
+        <div class="invalid-feedback" *ngIf="buscaCooperadoFormGroup.get('documento')?.invalid">
+          <p *ngIf="buscaCooperadoFormGroup.get('documento')?.hasError('minlength')">
+            CPF está inválido
+          </p>
+          <p *ngIf="buscaCooperadoFormGroup.get('documento')?.hasError('required')">
+            CPF é obrigatório
+          </p>
+        </div>
+      </div>
+      <div class="align-self-start">
+        <button class="btn btn-primary" type="submit" [disabled]="buscaCooperadoFormGroup.invalid">Consultar por CPF</button>
+      </div>
+    </div>
+  </div>
+</form>
+
